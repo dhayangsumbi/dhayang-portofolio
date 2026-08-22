@@ -1,513 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Dhayang Sumbi | Administration Professional</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8f5f2;
-            color: #2f2a28;
-            line-height: 1.6;
-        }
-
-        nav {
-            width: 100%;
-            padding: 22px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #fffdfb;
-            border-bottom: 1px solid #eee5df;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #3b3431;
-        }
-
-        .logo span {
-            color: #b97878;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 28px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #4d4541;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #b97878;
-        }
-
-        .hero {
-            min-height: 85vh;
-            padding: 80px 7%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            background: #fffdfb;
-        }
-
-        .hero-text {
-            max-width: 650px;
-        }
-
-        .small-title {
-            color: #b97878;
-            font-size: 14px;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            font-family: Georgia, serif;
-            font-size: clamp(42px, 6vw, 72px);
-            line-height: 1.05;
-            margin-bottom: 12px;
-        }
-
-        .profession {
-            font-family: Georgia, serif;
-            font-style: italic;
-            font-size: 26px;
-            color: #b97878;
-            margin-bottom: 25px;
-        }
-
-        .hero-description {
-            max-width: 600px;
-            color: #665e59;
-            font-size: 17px;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #b97878;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #9f6262;
-        }
-
-        .btn-secondary {
-            border: 1px solid #b97878;
-            color: #9f6262;
-        }
-
-        .btn-secondary:hover {
-            background: #f5e8e5;
-        }
-
-        .hero-image {
-            width: 340px;
-            height: 420px;
-            border-radius: 180px 180px 20px 20px;
-            background: linear-gradient(145deg, #ead5d0, #f3e7e3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .initials {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: #fffdfb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Georgia, serif;
-            font-size: 48px;
-            color: #b97878;
-            box-shadow: 0 15px 40px rgba(70, 50, 45, 0.08);
-        }
-
-        section {
-            padding: 80px 7%;
-        }
-
-        .section-title {
-            font-family: Georgia, serif;
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            color: #766d67;
-            max-width: 650px;
-            margin-bottom: 45px;
-        }
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .summary-card {
-            background: white;
-            padding: 30px;
-            border-radius: 18px;
-            border: 1px solid #eee4de;
-        }
-
-        .summary-card strong {
-            display: block;
-            font-size: 30px;
-            color: #b97878;
-            margin-bottom: 8px;
-        }
-
-        .summary-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .summary-card p {
-            color: #766d67;
-            font-size: 14px;
-        }
-
-        .expertise {
-            background: #f3ebe7;
-        }
-
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .expertise-card {
-            background: #fffdfb;
-            padding: 30px 20px;
-            border-radius: 18px;
-            text-align: center;
-            border: 1px solid #eaded8;
-        }
-
-        .expertise-icon {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-
-        .expertise-card h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-
-        .expertise-card p {
-            font-size: 13px;
-            color: #766d67;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #2f2a28;
-            color: white;
-            font-size: 13px;
-        }
-
-        @media (max-width: 900px) {
-            nav ul {
-                display: none;
-            }
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 60px;
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .buttons {
-                justify-content: center;
-            }
-
-            .summary-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .expertise-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero-image {
-                width: 260px;
-                height: 330px;
-            }
-
-            .expertise-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 60px 6%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dhayang Sumbi — Administration & Operations Professional portfolio.">
+<title>Dhayang Sumbi | Administration & Operations Professional</title>
+<style>
+:root{
+  --ink:#263746;
+  --muted:#66727e;
+  --cream:#fffaf6;
+  --white:#ffffff;
+  --pink:#f39aa6;
+  --coral:#f47f78;
+  --peach:#ffd6bd;
+  --yellow:#ffe39a;
+  --mint:#bfe9d7;
+  --sky:#b9dcf5;
+  --lav:#d9c8f3;
+  --navy:#243b53;
+  --line:#eadfd8;
+  --shadow:0 18px 50px rgba(67,48,44,.10);
+  --radius:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  color:var(--ink);background:var(--cream);line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1120px,92%);margin:auto}
+nav{
+  position:sticky;top:0;z-index:20;background:rgba(255,250,246,.90);
+  backdrop-filter:blur(14px);border-bottom:1px solid rgba(234,223,216,.8);
+}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:800;font-size:1.05rem;color:var(--navy)}
+.logo span{color:var(--coral)}
+.nav-links{display:flex;gap:24px;align-items:center;font-size:.92rem;color:var(--muted)}
+.nav-links a:hover{color:var(--coral)}
+.nav-cta{background:var(--navy);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700}
+.hero{padding:74px 0 54px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);z-index:-1}
+.hero:before{width:340px;height:340px;background:var(--peach);right:-90px;top:-110px}
+.hero:after{width:230px;height:230px;background:var(--lav);left:-110px;bottom:-90px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.82rem;font-weight:800;color:var(--coral);margin-bottom:18px}
+h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.03;letter-spacing:-.055em;color:var(--navy);margin-bottom:18px}
+.hero h1 span{color:var(--coral)}
+.hero-copy{font-size:1.08rem;color:var(--muted);max-width:650px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:14px;font-weight:800;border:1px solid transparent;transition:.2s}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-soft{background:#fff;border-color:var(--line)}
+.hero-photo{position:relative;max-width:420px;margin:auto}
+.hero-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:38% 62% 52% 48% / 45% 38% 62% 55%;box-shadow:var(--shadow);border:10px solid #fff}
+.badge{position:absolute;left:-24px;bottom:25px;background:#fff;padding:15px 17px;border-radius:18px;box-shadow:var(--shadow);font-size:.85rem;font-weight:800}
+.badge small{display:block;color:var(--muted);font-weight:600;margin-top:2px}
+.section{padding:88px 0}
+.section.alt{background:#fff}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:32px}
+.kicker{text-transform:uppercase;letter-spacing:.13em;font-size:.76rem;font-weight:900;color:var(--coral)}
+h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;color:var(--navy);margin-top:6px;letter-spacing:-.035em}
+.lead{max-width:660px;color:var(--muted)}
+.snapshot{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{padding:24px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 28px rgba(67,48,44,.05)}
+.stat strong{display:block;font-size:2rem;color:var(--navy);line-height:1}
+.stat span{display:block;color:var(--muted);font-size:.86rem;margin-top:8px}
+.expertise{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ex-card{padding:24px;border-radius:22px;border:1px solid var(--line);background:#fff}
+.ex-card:nth-child(1){background:#fff0f1}.ex-card:nth-child(2){background:#fff5dc}.ex-card:nth-child(3){background:#eaf8f2}
+.ex-card:nth-child(4){background:#edf6ff}.ex-card:nth-child(5){background:#f4effd}.ex-card:nth-child(6){background:#fff1e7}
+.ex-icon{font-size:1.6rem;margin-bottom:12px}.ex-card h3{margin-bottom:6px;color:var(--navy)}.ex-card p{font-size:.9rem;color:var(--muted)}
+.timeline{position:relative;display:grid;gap:22px}
+.timeline:before{content:"";position:absolute;left:14px;top:8px;bottom:8px;width:2px;background:var(--peach)}
+.exp{position:relative;padding-left:48px}
+.dot{position:absolute;left:5px;top:7px;width:20px;height:20px;border-radius:50%;background:var(--coral);border:5px solid var(--cream)}
+.exp-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 10px 30px rgba(67,48,44,.05)}
+.exp-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.exp h3{color:var(--navy);font-size:1.15rem}.role{font-weight:800;color:var(--coral);font-size:.9rem}.period{font-weight:800;color:var(--muted);font-size:.86rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{padding:6px 10px;background:#f7f3f0;border-radius:999px;font-size:.75rem;font-weight:800;color:var(--muted)}
+.exp ul{margin:16px 0 0 18px;color:var(--muted);font-size:.9rem}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.project{background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:0 10px 35px rgba(67,48,44,.06)}
+.project.featured{grid-column:1/-1}
+.project-media{background:#f0f5fa;padding:18px;min-height:250px;display:flex;align-items:center;justify-content:center}
+.project-media img{width:100%;max-height:390px;object-fit:contain;border-radius:14px;background:#fff}
+.project-body{padding:24px}.project h3{font-size:1.3rem;color:var(--navy);margin-bottom:7px}.project p{color:var(--muted);font-size:.9rem}
+.project-meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.project-meta span{font-size:.74rem;font-weight:800;padding:6px 10px;border-radius:999px;background:#fff2f0;color:#a85650}
+.project-link{display:inline-block;margin-top:10px;color:var(--coral);font-weight:900;font-size:.88rem}
+.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.skill-box{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px}
+.skill-box h3{color:var(--navy);margin-bottom:15px}.skill-list{display:flex;flex-wrap:wrap;gap:9px}
+.skill-list span{padding:8px 11px;border-radius:12px;background:#f7f3f0;font-size:.82rem;font-weight:750}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}
+.about-photo{max-width:360px;margin:auto}.about-photo img{border-radius:28px;box-shadow:var(--shadow)}
+.about-copy p{color:var(--muted);margin:12px 0}
+.about-highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.highlight{padding:15px;border-radius:18px;background:#fff;border:1px solid var(--line);font-weight:800;font-size:.88rem}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cert{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.cert strong{display:block;color:var(--navy);margin-bottom:6px}.cert span{color:var(--muted);font-size:.84rem}
+.contact{background:var(--navy);color:#fff;border-radius:32px;padding:44px;position:relative;overflow:hidden}
+.contact:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:var(--coral);right:-100px;top:-130px;opacity:.75}
+.contact h2{color:#fff}.contact p{color:#dce5ec;max-width:700px;margin:12px 0 22px}.contact-links{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2}.contact .btn-soft{background:#fff;color:var(--navy);border:none}
+footer{padding:32px 0;color:var(--muted);font-size:.82rem;text-align:center}
+.mobile{display:none}
+@media(max-width:850px){
+  .nav-links{display:none}.mobile{display:block}
+  .hero-grid,.about-grid,.skills-wrap{grid-template-columns:1fr}
+  .snapshot{grid-template-columns:repeat(2,1fr)}
+  .expertise,.cert-grid,.projects{grid-template-columns:1fr}
+  .project.featured{grid-column:auto}
+  .hero{padding-top:50px}
+}
+@media(max-width:520px){
+  .snapshot{grid-template-columns:1fr 1fr}.section{padding:62px 0}.contact{padding:28px}
+}
+</style>
 </head>
-
 <body>
 
-    <nav>
-        <div class="logo">
-            DS<span>.</span>
-        </div>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">Dhayang<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta mobile" href="#contact">Contact</a>
+  </div>
+</nav>
 
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">✦ Administration & Operations Professional</div>
+      <h1>Making operations <span>organized, visible,</span> and easier to manage.</h1>
+      <p class="hero-copy">Administration, General Affairs, HR Administration, Asset Management, Procurement Support, and Excel & Data — with a practical, structured, and solution-oriented approach.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">Explore My Work →</a>
+        <a class="btn btn-soft" href="Dhayang_Sumbi_Final_CV_Website.pdf" target="_blank">Download CV</a>
+      </div>
+      <div class="tags">
+        <span class="tag">5+ Years Experience</span>
+        <span class="tag">GA & Administration</span>
+        <span class="tag">Excel & Data</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/profile-hero.jpg" alt="Dhayang Sumbi">
+      <div class="badge">Based in Bekasi<small>West Java, Indonesia</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Professional Snapshot</div><h2>A practical operations mindset.</h2></div>
+      <p class="lead">Experience supporting business operations, administrative processes, assets, vendors, budgets, and data across multiple functions.</p>
+    </div>
+    <div class="snapshot">
+      <div class="stat"><strong>5+</strong><span>Years professional experience</span></div>
+      <div class="stat"><strong>600+</strong><span>Employees supported across operations</span></div>
+      <div class="stat"><strong>13</strong><span>Subsidiaries supported</span></div>
+      <div class="stat"><strong>20+</strong><span>Vendors coordinated</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="expertise">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Core Expertise</div><h2>Where I create value.</h2></div>
+    </div>
+    <div class="expertise">
+      <div class="ex-card"><div class="ex-icon">📋</div><h3>Administration</h3><p>Office administration, documentation, records, reporting, and workflow support.</p></div>
+      <div class="ex-card"><div class="ex-icon">🏢</div><h3>General Affairs</h3><p>Office operations, facilities, inventory, employee support, and operational readiness.</p></div>
+      <div class="ex-card"><div class="ex-icon">👥</div><h3>HR Administration</h3><p>Employee data, attendance, leave administration, personnel documentation, and support.</p></div>
+      <div class="ex-card"><div class="ex-icon">🛒</div><h3>Purchasing Support</h3><p>Procurement administration, vendor coordination, quotations, and operational requirements.</p></div>
+      <div class="ex-card"><div class="ex-icon">📦</div><h3>Asset Management</h3><p>Asset records, tracking, movement, maintenance, disposal, audit, and monitoring.</p></div>
+      <div class="ex-card"><div class="ex-icon">📊</div><h3>Excel & Data</h3><p>Structured data, reporting, dashboards, analysis, and Excel-based process improvement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Work Experience</div><h2>Experience that supports the details.</h2></div>
+    </div>
+    <div class="timeline">
+      <div class="exp"><span class="dot"></span><div class="exp-card">
+        <div class="exp-top"><div><h3>PT Erajaya Swasembada Tbk</h3><div class="role">General Affairs & Administrative Support Staff</div></div><div class="period">2018 – 2019</div></div>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#summary">About</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li>Supported daily General Affairs and administrative operations, documentation, office requirements, and vendor coordination.</li>
+          <li>Assisted budgeting administration, operational expense reporting, procurement support, and facility requirements.</li>
+          <li>Contributed to administrative process improvement using Microsoft Excel.</li>
         </ul>
-    </nav>
+        <div class="tags"><span class="tag">Office Operations</span><span class="tag">Vendor Coordination</span><span class="tag">Budgeting</span><span class="tag">Excel</span></div>
+      </div></div>
+      <div class="exp"><span class="dot"></span><div class="exp-card">
+        <div class="exp-top"><div><h3>PT CS Finance</h3><div class="role">Fixed Asset Staff – General Affairs</div></div><div class="period">2016 – 2018</div></div>
+        <ul>
+          <li>Managed asset records, inventory databases, stock opname, asset verification, transfers, disposal, and documentation.</li>
+          <li>Supported General Affairs operations across 13 subsidiaries and 3 head offices, covering approximately 600 employees.</li>
+          <li>Coordinated procurement support and vendor communication for office equipment and operational supplies.</li>
+        </ul>
+        <div class="tags"><span class="tag">Asset Management</span><span class="tag">GA</span><span class="tag">Vendor Coordination</span><span class="tag">Documentation</span></div>
+      </div></div>
+      <div class="exp"><span class="dot"></span><div class="exp-card">
+        <div class="exp-top"><div><h3>School Committee Chair</h3><div class="role">TK Pembina 1 Cikarang Utara</div></div><div class="period">2026 – 2027</div></div>
+        <ul>
+          <li>Led coordination among parents, teachers, school management, and committee members.</li>
+          <li>Supported planning, budgeting, event requirements, vendor coordination, and financial monitoring.</li>
+          <li>Developed an Excel-based committee financial management system for income, expenses, budget allocation, and remaining balance.</li>
+        </ul>
+        <div class="tags"><span class="tag">Leadership</span><span class="tag">Budget Management</span><span class="tag">Stakeholder Coordination</span><span class="tag">Excel</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
 
-    <main>
+<section class="section alt" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Selected Projects</div><h2>Work samples, not just words.</h2></div>
+      <p class="lead">A selection of practical systems and operational projects demonstrating administration, Excel, data, coordination, and process improvement.</p>
+    </div>
+    <div class="projects">
+      <article class="project featured">
+        <div class="project-media"><img src="assets/oms-asset-dashboard.png" alt="Office Management System Asset Management Dashboard"></div>
+        <div class="project-body">
+          <div class="kicker">Featured Project · Personal Project</div>
+          <h3>Office Management System (OMS)</h3>
+          <p>Excel-based integrated office management system combining HR Administration, Asset Management, budgeting, audit, KPI, and operational reporting.</p>
+          <div class="project-meta"><span>HRIS</span><span>Asset Management</span><span>Budgeting</span><span>Dashboard</span><span>Excel</span></div>
+          <a class="project-link" href="#oms-details">View project highlights ↓</a>
+        </div>
+      </article>
 
-        <section class="hero" id="home">
+      <article class="project" id="oms-details">
+        <div class="project-media"><img src="assets/oms-hris-dashboard.png" alt="OMS Leave Management Dashboard"></div>
+        <div class="project-body">
+          <div class="kicker">OMS · HRIS Module</div>
+          <h3>Leave Management Dashboard</h3>
+          <p>Structured leave request monitoring with leave type, department, status, monthly trend, employee ranking, and interactive filters.</p>
+          <div class="project-meta"><span>Leave Management</span><span>Reporting</span><span>Data Visualization</span></div>
+        </div>
+      </article>
 
-            <div class="hero-text">
+      <article class="project">
+        <div class="project-media"><img src="assets/oms-asset-audit.png" alt="OMS Asset Audit"></div>
+        <div class="project-body">
+          <div class="kicker">OMS · Asset Module</div>
+          <h3>Asset Audit</h3>
+          <p>Audit tracking covering asset identity, condition, findings, auditor, next audit date, and follow-up remarks.</p>
+          <div class="project-meta"><span>Asset Audit</span><span>Control</span><span>Monitoring</span></div>
+        </div>
+      </article>
 
-                <div class="small-title">
-                    HELLO, I'M
-                </div>
+      <article class="project">
+        <div class="project-media"><img src="assets/committee-budget-management.png" alt="Committee Budget Management"></div>
+        <div class="project-body">
+          <div class="kicker">Selected Project · Committee</div>
+          <h3>Committee Financial Management System</h3>
+          <p>Excel-based budget monitoring system for planned budget, actual cost, remaining budget, utilization, and budget status.</p>
+          <div class="project-meta"><span>Budget Planning</span><span>Budget vs Actual</span><span>Cash Flow</span><span>Excel</span></div>
+        </div>
+      </article>
 
-                <h1>
-                    Dhayang Sumbi
-                </h1>
+      <article class="project">
+        <div class="project-media"><img src="assets/committee-rab-transactions.png" alt="Committee RAB Transactions"></div>
+        <div class="project-body">
+          <div class="kicker">Committee System · Supporting Work Sample</div>
+          <h3>RAB & Transaction Tracking</h3>
+          <p>Structured activity budget and transaction records covering date, activity, category, quantity, unit price, amount, and status.</p>
+          <div class="project-meta"><span>RAB</span><span>Transaction Tracking</span><span>Documentation</span></div>
+        </div>
+      </article>
 
-                <div class="profession">
-                    Administration Professional
-                </div>
+      <article class="project">
+        <div class="project-body">
+          <div class="kicker">Professional Project Experience</div>
+          <h3>Asset Renewal & Mobile Phone Projects</h3>
+          <p>Supported asset renewal for approximately 400 employees and a mobile phone project for approximately 200 field employees across 20 branches.</p>
+          <div class="project-meta"><span>Asset Renewal</span><span>Procurement</span><span>Distribution</span><span>Vendor Coordination</span></div>
+        </div>
+      </article>
 
-                <p class="hero-description">
-                    Detail-oriented and reliable professional with 5+ years
-                    of experience in Administration, General Affairs,
-                    HR Administration, and Data Management. Passionate about
-                    improving processes and supporting team productivity.
-                </p>
+      <article class="project">
+        <div class="project-body">
+          <div class="kicker">Professional Project Experience</div>
+          <h3>Uniform Redesign & Office Improvement</h3>
+          <p>Supported administrative coordination for employee uniform redesign and an office vertical garden improvement project.</p>
+          <div class="project-meta"><span>Project Coordination</span><span>Vendor Communication</span><span>Administration</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-                <div class="buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        View My Work
-                    </a>
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Skills & Tools</div><h2>Structured skills for real work.</h2></div>
+    </div>
+    <div class="skills-wrap">
+      <div class="skill-box">
+        <h3>Professional Skills</h3>
+        <div class="skill-list">
+          <span>Office Administration</span><span>General Affairs</span><span>HR Administration</span><span>Asset Management</span><span>Vendor Coordination</span><span>Procurement Support</span><span>Budget Monitoring</span><span>Document Control</span><span>Reporting</span><span>Stakeholder Coordination</span><span>Problem Solving</span><span>Time Management</span>
+        </div>
+      </div>
+      <div class="skill-box">
+        <h3>Tools & Systems</h3>
+        <div class="skill-list">
+          <span>Microsoft Excel</span><span>Pivot Tables</span><span>XLOOKUP / VLOOKUP</span><span>SUMIFS / COUNTIFS</span><span>Data Validation</span><span>Conditional Formatting</span><span>Dashboard Development</span><span>Microsoft Word</span><span>PowerPoint</span><span>Outlook</span><span>Basic SQL</span><span>Basic ERP Systems</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <a href="#" class="btn btn-secondary">
-                        Download CV
-                    </a>
-                </div>
+<section class="section alt" id="about">
+  <div class="container about-grid">
+    <div class="about-photo"><img src="assets/profile-about.jpg" alt="Dhayang Sumbi profile"></div>
+    <div class="about-copy">
+      <div class="kicker">About Me</div>
+      <h2>Organized by nature. Curious about better systems.</h2>
+      <p>I enjoy turning everyday administrative needs into clearer processes, structured data, and practical tools that make work easier to monitor and manage.</p>
+      <p>My background combines General Affairs, office administration, asset management, vendor coordination, budgeting, and Excel-based process improvement.</p>
+      <div class="about-highlights">
+        <div class="highlight">Detail-oriented</div><div class="highlight">Structured & organized</div>
+        <div class="highlight">Solution-oriented</div><div class="highlight">Continuous learner</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            </div>
+<section class="section" id="certificates">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Certificates</div><h2>Continuous learning.</h2></div>
+    </div>
+    <div class="cert-grid">
+      <div class="cert"><strong>SQL Introduction for Data Analysis</strong><span>MySkill · July 2026</span></div>
+      <div class="cert"><strong>Data Visualization with Microsoft Excel</strong><span>MySkill · July 2026</span></div>
+      <div class="cert"><strong>Tingkatkan Produktivitas dengan Microsoft Excel</strong><span>Skill Academy by Ruangguru · September 2020</span></div>
+    </div>
+  </div>
+</section>
 
-            <div class="hero-image">
-                <div class="initials">
-                    DS
-                </div>
-            </div>
+<section class="section">
+  <div class="container">
+    <div class="contact" id="contact">
+      <div class="kicker" style="color:#ffd6bd">Let’s connect</div>
+      <h2>Open to Administration, HR Administration, GA & Operations opportunities.</h2>
+      <p>Based in Bekasi, West Java, Indonesia. I’m interested in roles where organization, coordination, data, and practical problem-solving can create real operational value.</p>
+      <div class="contact-links">
+        <a class="btn btn-soft" href="mailto:Dhayang.sumbi111294@gmail.com">Email Me</a>
+        <a class="btn btn-soft" href="https://www.linkedin.com/in/dhayang-sumbi-9653a917/" target="_blank">LinkedIn</a>
+        <a class="btn btn-soft" href="Dhayang_Sumbi_Final_CV_Website.pdf" target="_blank">View CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
-        </section>
-
-
-        <section id="summary">
-
-            <div class="small-title">
-                PROFESSIONAL SUMMARY
-            </div>
-
-            <h2 class="section-title">
-                Reliable. Organized. Detail-Oriented.
-            </h2>
-
-            <p class="section-subtitle">
-                Combining administrative experience, operational support,
-                data management, and Microsoft Excel to create organized
-                and efficient work processes.
-            </p>
-
-            <div class="summary-grid">
-
-                <div class="summary-card">
-                    <strong>5+</strong>
-                    <h3>Years Experience</h3>
-                    <p>
-                        Professional experience in administration,
-                        general affairs, and asset management.
-                    </p>
-                </div>
-
-                <div class="summary-card">
-                    <strong>Admin</strong>
-                    <h3>Administration Expert</h3>
-                    <p>
-                        Experienced in documentation, coordination,
-                        reporting, and office administration.
-                    </p>
-                </div>
-
-                <div class="summary-card">
-                    <strong>Excel</strong>
-                    <h3>Data & Excel Enthusiast</h3>
-                    <p>
-                        Using Microsoft Excel to organize data,
-                        build reports, and support decision making.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="expertise" id="expertise">
-
-            <div class="small-title">
-                CORE EXPERTISE
-            </div>
-
-            <h2 class="section-title">
-                What I Do
-            </h2>
-
-            <p class="section-subtitle">
-                Areas where my professional experience can create value
-                for an organization.
-            </p>
-
-            <div class="expertise-grid">
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">📋</div>
-                    <h3>Administration Management</h3>
-                    <p>
-                        Office and general administration support.
-                    </p>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">👥</div>
-                    <h3>HR Administration</h3>
-                    <p>
-                        Employee documentation and process support.
-                    </p>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">📊</div>
-                    <h3>Data Management</h3>
-                    <p>
-                        Data processing, reporting, and Excel-based analysis.
-                    </p>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">🏢</div>
-                    <h3>General Affairs</h3>
-                    <p>
-                        Vendor coordination, assets, and facility support.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section id="experience">
-            <div class="small-title">WORK EXPERIENCE</div>
-
-            <h2 class="section-title">
-                Professional Experience
-            </h2>
-
-            <p class="section-subtitle">
-                Detailed career experience will be added in the next stage.
-            </p>
-        </section>
-
-
-        <section id="projects">
-            <div class="small-title">SELECTED PROJECTS</div>
-
-            <h2 class="section-title">
-                My Work
-            </h2>
-
-            <p class="section-subtitle">
-                Portfolio projects and work samples will be added here.
-            </p>
-        </section>
-
-
-        <section id="contact">
-            <div class="small-title">CONTACT</div>
-
-            <h2 class="section-title">
-                Let's Connect
-            </h2>
-
-            <p class="section-subtitle">
-                Interested in working together? Contact me through my
-                professional channels.
-            </p>
-        </section>
-
-    </main>
-
-
-    <footer>
-        © 2026 Dhayang Sumbi — Personal Career Portfolio
-    </footer>
-
+<footer>
+  © 2026 Dhayang Sumbi · Administration & Operations Professional
+</footer>
 </body>
 </html>
