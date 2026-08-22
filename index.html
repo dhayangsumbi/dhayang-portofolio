@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dhayang Sumbi | Administration Professional</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f5f2;
+            color: #2f2a28;
+            line-height: 1.6;
+        }
+
+        nav {
+            width: 100%;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fffdfb;
+            border-bottom: 1px solid #eee5df;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #3b3431;
+        }
+
+        .logo span {
+            color: #b97878;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4d4541;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #b97878;
+        }
+
+        .hero {
+            min-height: 85vh;
+            padding: 80px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: #fffdfb;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .small-title {
+            color: #b97878;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 12px;
+        }
+
+        .profession {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 26px;
+            color: #b97878;
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            color: #665e59;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #b97878;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #9f6262;
+        }
+
+        .btn-secondary {
+            border: 1px solid #b97878;
+            color: #9f6262;
+        }
+
+        .btn-secondary:hover {
+            background: #f5e8e5;
+        }
+
+        .hero-image {
+            width: 340px;
+            height: 420px;
+            border-radius: 180px 180px 20px 20px;
+            background: linear-gradient(145deg, #ead5d0, #f3e7e3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .initials {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #fffdfb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Georgia, serif;
+            font-size: 48px;
+            color: #b97878;
+            box-shadow: 0 15px 40px rgba(70, 50, 45, 0.08);
+        }
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: #766d67;
+            max-width: 650px;
+            margin-bottom: 45px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #eee4de;
+        }
+
+        .summary-card strong {
+            display: block;
+            font-size: 30px;
+            color: #b97878;
+            margin-bottom: 8px;
+        }
+
+        .summary-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .summary-card p {
+            color: #766d67;
+            font-size: 14px;
+        }
+
+        .expertise {
+            background: #f3ebe7;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .expertise-card {
+            background: #fffdfb;
+            padding: 30px 20px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid #eaded8;
+        }
+
+        .expertise-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .expertise-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .expertise-card p {
+            font-size: 13px;
+            color: #766d67;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #2f2a28;
+            color: white;
+            font-size: 13px;
+        }
+
+        @media (max-width: 900px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-image {
+                width: 260px;
+                height: 330px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            DS<span>.</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#summary">About</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-text">
+
+                <div class="small-title">
+                    HELLO, I'M
+                </div>
+
+                <h1>
+                    Dhayang Sumbi
+                </h1>
+
+                <div class="profession">
+                    Administration Professional
+                </div>
+
+                <p class="hero-description">
+                    Detail-oriented and reliable professional with 5+ years
+                    of experience in Administration, General Affairs,
+                    HR Administration, and Data Management. Passionate about
+                    improving processes and supporting team productivity.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        View My Work
+                    </a>
+
+                    <a href="#" class="btn btn-secondary">
+                        Download CV
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+                <div class="initials">
+                    DS
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="summary">
+
+            <div class="small-title">
+                PROFESSIONAL SUMMARY
+            </div>
+
+            <h2 class="section-title">
+                Reliable. Organized. Detail-Oriented.
+            </h2>
+
+            <p class="section-subtitle">
+                Combining administrative experience, operational support,
+                data management, and Microsoft Excel to create organized
+                and efficient work processes.
+            </p>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <strong>5+</strong>
+                    <h3>Years Experience</h3>
+                    <p>
+                        Professional experience in administration,
+                        general affairs, and asset management.
+                    </p>
+                </div>
+
+                <div class="summary-card">
+                    <strong>Admin</strong>
+                    <h3>Administration Expert</h3>
+                    <p>
+                        Experienced in documentation, coordination,
+                        reporting, and office administration.
+                    </p>
+                </div>
+
+                <div class="summary-card">
+                    <strong>Excel</strong>
+                    <h3>Data & Excel Enthusiast</h3>
+                    <p>
+                        Using Microsoft Excel to organize data,
+                        build reports, and support decision making.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="expertise" id="expertise">
+
+            <div class="small-title">
+                CORE EXPERTISE
+            </div>
+
+            <h2 class="section-title">
+                What I Do
+            </h2>
+
+            <p class="section-subtitle">
+                Areas where my professional experience can create value
+                for an organization.
+            </p>
+
+            <div class="expertise-grid">
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">📋</div>
+                    <h3>Administration Management</h3>
+                    <p>
+                        Office and general administration support.
+                    </p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">👥</div>
+                    <h3>HR Administration</h3>
+                    <p>
+                        Employee documentation and process support.
+                    </p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">📊</div>
+                    <h3>Data Management</h3>
+                    <p>
+                        Data processing, reporting, and Excel-based analysis.
+                    </p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">🏢</div>
+                    <h3>General Affairs</h3>
+                    <p>
+                        Vendor coordination, assets, and facility support.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="experience">
+            <div class="small-title">WORK EXPERIENCE</div>
+
+            <h2 class="section-title">
+                Professional Experience
+            </h2>
+
+            <p class="section-subtitle">
+                Detailed career experience will be added in the next stage.
+            </p>
+        </section>
+
+
+        <section id="projects">
+            <div class="small-title">SELECTED PROJECTS</div>
+
+            <h2 class="section-title">
+                My Work
+            </h2>
+
+            <p class="section-subtitle">
+                Portfolio projects and work samples will be added here.
+            </p>
+        </section>
+
+
+        <section id="contact">
+            <div class="small-title">CONTACT</div>
+
+            <h2 class="section-title">
+                Let's Connect
+            </h2>
+
+            <p class="section-subtitle">
+                Interested in working together? Contact me through my
+                professional channels.
+            </p>
+        </section>
+
+    </main>
+
+
+    <footer>
+        © 2026 Dhayang Sumbi — Personal Career Portfolio
+    </footer>
+
+</body>
+</html>
